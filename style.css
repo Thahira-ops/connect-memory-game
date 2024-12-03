@@ -1,0 +1,99 @@
+
+/* General reset for styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Linear Gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: #333;
+    flex-direction: column;
+}
+
+#game-container {
+    text-align: center;
+    width: 100%;
+    max-width: 480px;
+    padding: 20px;
+}
+
+#score-container {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tile {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: transparent;
+    transition: all 0.3s ease;
+}
+
+.tile.revealed {
+    background-color: #fff;
+    color: #333;
+}
+
+.tile.matched {
+    background-color: #4caf50;
+    color: #fff;
+    pointer-events: none;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff7e5f;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #feb47b;
+}
+
+/* Result page styles */
+#result-page {
+    text-align: center;
+    display: none; /* Hidden initially */
+}
+
+#result-message {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    #game-grid {
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(4, 100px);
+    }
+}
